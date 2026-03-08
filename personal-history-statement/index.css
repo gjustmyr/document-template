@@ -4,15 +4,25 @@
 	margin: 0;
 }
 
+html {
+	background: #525659;
+}
+
 body {
-	width: 7in;
-	margin: 0 auto;
-	padding: 0.75in 0;
+	width: 8.5in;
+	min-height: 13in;
+	margin: 20px auto;
+	padding: 0.75in;
 	font-family: "Times New Roman", Times, serif;
 	font-size: 14px;
+	background: white;
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .print-button {
+	position: fixed;
+	top: 20px;
+	right: 20px;
 	margin: 10px 0;
 	padding: 10px 20px;
 	background-color: #007bff;
@@ -21,6 +31,7 @@ body {
 	border-radius: 5px;
 	cursor: pointer;
 	font-size: 14px;
+	z-index: 1000;
 }
 
 .print-button:hover {
@@ -28,9 +39,19 @@ body {
 }
 
 @media print {
+	html {
+		background: white;
+	}
+
 	body {
-		width: 7in;
+		width: 8.5in;
 		margin: 0;
+		padding: 0.75in;
+		box-shadow: none;
+	}
+
+	.print-button {
+		display: none;
 	}
 }
 
