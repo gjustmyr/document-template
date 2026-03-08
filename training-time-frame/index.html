@@ -1,211 +1,317 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>On-The-Job Training Time Frame</title>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
-    <!-- Schedule Configuration Section (Outside the form) -->
-    <div class="config-wrapper">
-        <div class="schedule-config">
-            <h2>⚙️ Fill Information & Configure Schedule</h2>
-            
-            <!-- Student Information Inputs -->
-            <div class="info-inputs">
-                <h3>Student Information</h3>
-                <div class="input-grid">
-                    <div class="config-group">
-                        <label>Student Name:</label>
-                        <input type="text" id="studentName" placeholder="Juan Dela Cruz" oninput="updateDisplay()">
-                    </div>
-                    <div class="config-group">
-                        <label>Year/Program:</label>
-                        <input type="text" id="yearProgram" placeholder="4th Year - BSCS" oninput="updateDisplay()">
-                    </div>
-                    <div class="config-group">
-                        <label>Company/Address:</label>
-                        <input type="text" id="companyAddress" placeholder="ABC Company, Manila" oninput="updateDisplay()">
-                    </div>
-                    <div class="config-group">
-                        <label>Required Hours:</label>
-                        <input type="number" id="requiredHours" placeholder="486" min="1" oninput="updateDisplay()">
-                    </div>
-                </div>
-            </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>On-The-Job Training Time Frame</title>
+		<link rel="stylesheet" href="index.css" />
+	</head>
+	<body>
+		<!-- Schedule Configuration Section (Outside the form) -->
+		<div class="config-wrapper">
+			<div class="schedule-config">
+				<h2>⚙️ Fill Information & Configure Schedule</h2>
 
-            <hr class="divider">
+				<!-- Student Information Inputs -->
+				<div class="info-inputs">
+					<h3>Student Information</h3>
+					<div class="input-grid">
+						<div class="config-group">
+							<label>Student Name:</label>
+							<input
+								type="text"
+								id="studentName"
+								placeholder="Juan Dela Cruz"
+								oninput="updateDisplay()" />
+						</div>
+						<div class="config-group">
+							<label>Year/Program:</label>
+							<input
+								type="text"
+								id="yearProgram"
+								placeholder="4th Year - BSCS"
+								oninput="updateDisplay()" />
+						</div>
+						<div class="config-group">
+							<label>Company/Address:</label>
+							<input
+								type="text"
+								id="companyAddress"
+								placeholder="ABC Company, Manila"
+								oninput="updateDisplay()" />
+						</div>
+						<div class="config-group">
+							<label>Required Hours:</label>
+							<input
+								type="number"
+								id="requiredHours"
+								placeholder="486"
+								min="1"
+								oninput="updateDisplay()" />
+						</div>
+					</div>
+				</div>
 
-            <!-- Schedule Configuration -->
-            <h3>Training Schedule Configuration</h3>
-            
-            <div class="config-grid">
-                <div class="config-group">
-                    <label>Start Date:</label>
-                    <input type="date" id="startDate">
-                </div>
+				<hr class="divider" />
 
-                <div class="config-group">
-                    <label>End Date:</label>
-                    <input type="date" id="endDate">
-                </div>
+				<!-- Schedule Configuration -->
+				<h3>Training Schedule Configuration</h3>
 
-                <div class="config-group">
-                    <label>Time In:</label>
-                    <input type="time" id="timeIn" value="08:00">
-                </div>
-                
-                <div class="config-group">
-                    <label>Time Out:</label>
-                    <input type="time" id="timeOut" value="17:00">
-                </div>
-                
-                <div class="config-group">
-                    <label>Hours per Day:</label>
-                    <input type="number" id="hoursPerDay" value="8" min="1" max="24" step="0.5">
-                </div>
-            </div>
+				<div class="config-grid">
+					<div class="config-group">
+						<label>Start Date:</label>
+						<input type="date" id="startDate" />
+					</div>
 
-            <div class="config-group">
-                <label>Training Days:</label>
-                <div class="days-selector">
-                    <label><input type="checkbox" value="1" checked> Mon</label>
-                    <label><input type="checkbox" value="2" checked> Tue</label>
-                    <label><input type="checkbox" value="3" checked> Wed</label>
-                    <label><input type="checkbox" value="4" checked> Thu</label>
-                    <label><input type="checkbox" value="5" checked> Fri</label>
-                    <label><input type="checkbox" value="6"> Sat</label>
-                    <label><input type="checkbox" value="0"> Sun</label>
-                </div>
-            </div>
+					<div class="config-group">
+						<label>End Date:</label>
+						<input type="date" id="endDate" />
+					</div>
 
-            <button class="generate-btn" onclick="generateSchedule()">📅 Generate Schedule</button>
-        </div>
-    </div>
+					<div class="config-group">
+						<label>Time In:</label>
+						<input type="time" id="timeIn" value="08:00" />
+					</div>
 
-    <!-- The Actual Form Document -->
-    <div class="form-document">
-        <!-- Header Table -->
-        <table class="header-table">
-            <tr>
-                <td class="logo-cell">
-                    <img src="BatStateU-NEU-Logo.png" alt="BatStateU Logo" class="logo-img" />
-                </td>
-                <td class="header-cell">Reference No.: BatStateU-FO-OJT-07</td>
-                <td class="header-cell">Effectivity Date: May 18, 2022</td>
-                <td class="header-cell">Revision No.: 01</td>
-            </tr>
-        </table>
+					<div class="config-group">
+						<label>Time Out:</label>
+						<input type="time" id="timeOut" value="17:00" />
+					</div>
 
-        <!-- Title Section -->
-        <table class="title-table">
-            <tr>
-                <td class="title-cell">
-                    <strong>ON-THE-JOB TRAINING TIME FRAME</strong>
-                </td>
-            </tr>
-        </table>
+					<div class="config-group">
+						<label>Hours per Day:</label>
+						<input
+							type="number"
+							id="hoursPerDay"
+							value="8"
+							min="1"
+							max="24"
+							step="0.5" />
+					</div>
+				</div>
 
-        <!-- Student Information Table -->
-        <table class="info-table">
-            <tr>
-                <td class="input-cell" colspan="2" style="width: 68%;">
-                    <strong>Name of the Student-Trainee:</strong><br>
-                    <span class="display-field" id="displayStudentName" style="display: block; border-bottom: 1px solid #000; min-height: 18px;"></span>
-                </td>
-                <td class="input-cell" colspan="2" style="width: 32%;">
-                    <strong>Year/Program:</strong><br>
-                    <span class="display-field" id="displayYearProgram" style="display: block; border-bottom: 1px solid #000; min-height: 18px;"></span>
-                </td>
-            </tr>
-            <tr>
-                <td class="input-cell" colspan="4">
-                    <strong>Name of Company/ Address:</strong><br>
-                    <span class="display-field" id="displayCompanyAddress" style="display: block; border-bottom: 1px solid #000; min-height: 18px;"></span>
-                </td>
-            </tr>
-            <tr>
-                <td class="input-cell" colspan="2">
-                    <strong>Required Number of Hours:</strong><br>
-                    <span class="display-field" id="displayRequiredHours" style="display: block; border-bottom: 1px solid #000; min-height: 18px;"></span>
-                </td>
-                <td colspan="2" style="border: 1px solid #000; background: white;"></td>
-            </tr>
-        </table>
+				<div class="config-group">
+					<label>Training Days:</label>
+					<div class="days-selector">
+						<label><input type="checkbox" value="1" checked /> Mon</label>
+						<label><input type="checkbox" value="2" checked /> Tue</label>
+						<label><input type="checkbox" value="3" checked /> Wed</label>
+						<label><input type="checkbox" value="4" checked /> Thu</label>
+						<label><input type="checkbox" value="5" checked /> Fri</label>
+						<label><input type="checkbox" value="6" /> Sat</label>
+						<label><input type="checkbox" value="0" /> Sun</label>
+					</div>
+				</div>
 
-        <!-- Time Frame Table -->
-        <table class="timeframe-table">
-            <thead>
-                <tr>
-                    <th colspan="3" style="background-color: #e8e8e8; border: 1px solid #000; padding: 0; height: 8px;"></th>
-                </tr>
-                <tr>
-                    <th style="width: 34%; background: white; padding-top: 0; padding-bottom: 0;">Date</th>
-                    <th style="width: 34%; background: white; padding-top: 0; padding-bottom: 0;">Time</th>
-                    <th style="width: 32%; background: white; padding-top: 0; padding-bottom: 0;">Number of Hours</th>
-                </tr>
-            </thead>
-            <tbody id="scheduleBody">
-                <!-- Rows will be generated here -->
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="2" style="text-align: right;"><strong>Total Number of Hours</strong></td>
-                    <td id="totalHours" style="text-align: center;"><strong>0</strong></td>
-                </tr>
-            </tfoot>
-        </table>
+				<button class="generate-btn" onclick="generateSchedule()">
+					📅 Generate Schedule
+				</button>
+			</div>
+		</div>
 
-        <!-- Privacy Notice -->
-        <div class="privacy-notice">
-            Pursuant to Republic Act No. 10173, also known as the Data Privacy Act of 2012, Batangas State University, the National Engineering University, recognizes its commitment to protect and respect the privacy of its customers and/or stakeholders and ensure that all personal information collected from them are all kept private in accordance with the principles of transparency, legitimate purpose and proportionality mandated under the Data Privacy Act of 2012.
-        </div>
+		<!-- The Actual Form Document -->
+		<div class="form-document">
+			<!-- Header Table -->
+			<table class="header-table">
+				<tr>
+					<td class="logo-cell">
+						<img
+							src="BatStateU-NEU-Logo.png"
+							alt="BatStateU Logo"
+							class="logo-img" />
+					</td>
+					<td class="header-cell">Reference No.: BatStateU-FO-OJT-07</td>
+					<td class="header-cell">Effectivity Date: May 18, 2022</td>
+					<td class="header-cell">Revision No.: 01</td>
+				</tr>
+			</table>
 
-        <!-- Signature Table -->
-        <table class="signature-table">
-            <tr>
-                <td class="sig-label">Prepared by:</td>
-                <td class="sig-label">Reviewed by:</td>
-                <td class="sig-label">Approved by:</td>
-            </tr>
-            <tr>
-                <td class="sig-line-cell">
-                    <div class="sig-line"></div>
-                    <div class="sig-text">Signature over Printed Name of<br>Student-Trainee</div>
-                </td>
-                <td class="sig-line-cell">
-                    <div class="sig-line"></div>
-                    <div class="sig-text">Signature over Printed Name of<br>OJT Coordinator</div>
-                </td>
-                <td class="sig-line-cell">
-                    <div class="sig-line"></div>
-                    <div class="sig-text">Signature over Printed Name of<br>Company's Authorized Representative</div>
-                </td>
-            </tr>
-            <tr>
-                <td class="sig-date-cell">
-                    Date:
-                    <div class="date-line"></div>
-                </td>
-                <td class="sig-date-cell">
-                    Date:
-                    <div class="date-line"></div>
-                </td>
-                <td class="sig-date-cell">
-                    Date:
-                    <div class="date-line"></div>
-                </td>
-            </tr>
-        </table>
+			<!-- Title Section -->
+			<table class="title-table">
+				<tr>
+					<td class="title-cell">
+						<strong>ON-THE-JOB TRAINING TIME FRAME</strong>
+					</td>
+				</tr>
+			</table>
 
-        <!-- Action Buttons -->
-        <div class="action-buttons">
-            <button class="print-btn" onclick="window.print()">Print Form</button>
-            <button class="reset-btn" onclick="resetForm()">Reset Form</button>
-        </div>
-    </div>
+			<!-- Student Information Table -->
+			<table class="info-table">
+				<tr>
+					<td class="input-cell" colspan="2" style="width: 68%">
+						<strong>Name of the Student-Trainee:</strong><br />
+						<span
+							class="display-field"
+							id="displayStudentName"
+							style="
+								display: block;
+								border-bottom: 1px solid #000;
+								min-height: 18px;
+							"></span>
+					</td>
+					<td class="input-cell" colspan="2" style="width: 32%">
+						<strong>Year/Program:</strong><br />
+						<span
+							class="display-field"
+							id="displayYearProgram"
+							style="
+								display: block;
+								border-bottom: 1px solid #000;
+								min-height: 18px;
+							"></span>
+					</td>
+				</tr>
+				<tr>
+					<td class="input-cell" colspan="4">
+						<strong>Name of Company/ Address:</strong><br />
+						<span
+							class="display-field"
+							id="displayCompanyAddress"
+							style="
+								display: block;
+								border-bottom: 1px solid #000;
+								min-height: 18px;
+							"></span>
+					</td>
+				</tr>
+				<tr>
+					<td class="input-cell" colspan="2">
+						<strong>Required Number of Hours:</strong><br />
+						<span
+							class="display-field"
+							id="displayRequiredHours"
+							style="
+								display: block;
+								border-bottom: 1px solid #000;
+								min-height: 18px;
+							"></span>
+					</td>
+					<td
+						colspan="2"
+						style="border: 1px solid #000; background: white"></td>
+				</tr>
+			</table>
 
-    <script src="index.js"></script>
-</body>
+			<!-- Time Frame Table -->
+			<table class="timeframe-table">
+				<thead>
+					<tr>
+						<th
+							colspan="3"
+							style="
+								background-color: #e8e8e8;
+								border: 1px solid #000;
+								padding: 0;
+								height: 8px;
+							"></th>
+					</tr>
+					<tr>
+						<th
+							style="
+								width: 34%;
+								background: white;
+								padding-top: 0;
+								padding-bottom: 0;
+							">
+							Date
+						</th>
+						<th
+							style="
+								width: 34%;
+								background: white;
+								padding-top: 0;
+								padding-bottom: 0;
+							">
+							Time
+						</th>
+						<th
+							style="
+								width: 32%;
+								background: white;
+								padding-top: 0;
+								padding-bottom: 0;
+							">
+							Number of Hours
+						</th>
+					</tr>
+				</thead>
+				<tbody id="scheduleBody">
+					<!-- Rows will be generated here -->
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="2" style="text-align: right">
+							<strong>Total Number of Hours</strong>
+						</td>
+						<td id="totalHours" style="text-align: center">
+							<strong>0</strong>
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+
+			<!-- Privacy Notice -->
+			<div class="privacy-notice">
+				Pursuant to Republic Act No. 10173, also known as the Data Privacy Act
+				of 2012, Batangas State University, the National Engineering University,
+				recognizes its commitment to protect and respect the privacy of its
+				customers and/or stakeholders and ensure that all personal information
+				collected from them are all kept private in accordance with the
+				principles of transparency, legitimate purpose and proportionality
+				mandated under the Data Privacy Act of 2012.
+			</div>
+
+			<!-- Signature Table -->
+			<table class="signature-table">
+				<tr>
+					<td class="sig-label">Prepared by:</td>
+					<td class="sig-label">Reviewed by:</td>
+					<td class="sig-label">Approved by:</td>
+				</tr>
+				<tr>
+					<td class="sig-line-cell">
+						<div class="sig-line"></div>
+						<div class="sig-text">
+							Signature over Printed Name of<br />Student-Trainee
+						</div>
+					</td>
+					<td class="sig-line-cell">
+						<div class="sig-line"></div>
+						<div class="sig-text">
+							Signature over Printed Name of<br />OJT Coordinator
+						</div>
+					</td>
+					<td class="sig-line-cell">
+						<div class="sig-line"></div>
+						<div class="sig-text">
+							Signature over Printed Name of<br />Company's Authorized
+							Representative
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="sig-date-cell">
+						Date:
+						<div class="date-line"></div>
+					</td>
+					<td class="sig-date-cell">
+						Date:
+						<div class="date-line"></div>
+					</td>
+					<td class="sig-date-cell">
+						Date:
+						<div class="date-line"></div>
+					</td>
+				</tr>
+			</table>
+
+			<!-- Action Buttons -->
+			<div class="action-buttons">
+				<button class="print-btn" onclick="window.print()">Print Form</button>
+				<button class="reset-btn" onclick="resetForm()">Reset Form</button>
+			</div>
+		</div>
+
+		<script src="index.js"></script>
+	</body>
 </html>

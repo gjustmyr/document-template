@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Parent's/Guardian's Consent Form</title>
+		<link rel="stylesheet" href="index.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+	</head>
+	<body>
+		<!-- Configuration Section -->
+		<div class="config-wrapper">
+			<div class="config-panel">
+				<h2>📝 Fill Parent's/Guardian's Consent Form</h2>
+
+				<div class="input-section">
+					<div class="input-group">
+						<label>Date:</label>
+						<input type="date" id="dateInput" oninput="updateDisplay()" />
+					</div>
+
+					<div class="input-group">
+						<label>Parent/Guardian Name:</label>
+						<input
+							type="text"
+							id="parentName"
+							placeholder="Juan Dela Cruz"
+							oninput="updateDisplay()" />
+					</div>
+
+					<div class="input-group">
+						<label>Student Name:</label>
+						<input
+							type="text"
+							id="studentName"
+							placeholder="Maria Dela Cruz"
+							oninput="updateDisplay()" />
+					</div>
+
+					<div class="input-group">
+						<label>Program/Course:</label>
+						<input
+							type="text"
+							id="program"
+							placeholder="BS Computer Science"
+							oninput="updateDisplay()" />
+					</div>
+
+					<div class="input-group">
+						<label>Contact Number:</label>
+						<input
+							type="text"
+							id="contactNumber"
+							placeholder="09XX-XXX-XXXX"
+							oninput="updateDisplay()" />
+					</div>
+
+					<div class="input-group">
+						<label>Address:</label>
+						<input
+							type="text"
+							id="address"
+							placeholder="Street, Barangay, City, Province"
+							oninput="updateDisplay()" />
+					</div>
+
+					<div class="input-group">
+						<label>OJT Coordinator Name:</label>
+						<input
+							type="text"
+							id="coordinatorName"
+							placeholder="Prof. Name"
+							oninput="updateDisplay()" />
+					</div>
+				</div>
+
+				<button class="reset-btn" onclick="resetForm()">Reset Form</button>
+			</div>
+		</div>
+
+		<!-- The Actual Form Document -->
+		<div class="form-document">
+			<!-- Header Table -->
+			<table class="header-table">
+				<tr>
+					<td class="logo-cell">
+						<img
+							src="../acceptance-form/BatStateU-NEU-Logo.png"
+							alt="BatStateU Logo"
+							class="logo-img" />
+					</td>
+					<td class="header-cell-1">Reference No.: BatStateU-FO-OJT-01</td>
+					<td class="header-cell-2">Effectivity Date: May 18, 2022</td>
+					<td class="header-cell-3">Revision No.: 02</td>
+				</tr>
+			</table>
+
+			<!-- Title Section -->
+			<table class="title-table">
+				<tr>
+					<td class="title-cell">
+						<strong
+							>PARENT'S/GUARDIAN'S CONSENT FORM FOR INTERNSHIP TRAINING</strong
+						>
+					</td>
+				</tr>
+			</table>
+
+			<!-- Content Section -->
+			<table class="content-table">
+				<tr>
+					<td class="content-cell">
+						<div class="date-section">
+							<span class="underline-field" id="displayDate"></span>
+						</div>
+						<div class="date-label-below">Date</div>
+
+						<p class="salutation">TO ALL CONCERNED:</></p>
+
+						<p class="paragraph">
+							I, ________________________________ grant permission for my
+							child/ward, ____________________________
+							a _________ student of _________________________________ of the
+							________________________________
+							of this University, to undergo internship training in any
+							educational institution/industrial firm or establishment in order
+							to acquire work experience related to the academic training.
+						</p>
+<br />
+						<p class="paragraph">
+							Further, as the Parent/Legal guardian, I also recognize that there
+							may be risks attribute to the internship training which can only
+							be avoided through my son's/daughter's/ward's extra diligence and
+							due care, which I fully explained to my son/daughter/ward. </p>
+<br/>
+						<p class="paragraph">
+							By signing this document, it is understood that my child/ward:
+						</p>
+
+<br/>
+						<p class="paragraph">
+							a) Has been properly oriented with all the rules and regulations in the conduct of internship training and that
+							there may be additional rules and instructions that may be given from time to time. It is further understood that
+							he/she must comply with the aforesaid rules, regulations and instructions; otherwise, he/she shall be excluded
+							from further participation.
+						</p>
+
+
+<br/>
+						<p class="paragraph">
+							b) Shall abide by all the company /school rules and regulation and
+							shall comply with those imposed for the program; otherwise, he/she
+							shall be excluded from the further participation.
+						</p>
+<br>
+
+						<p class="paragraph">
+							c) Shall exercise care and diligence in any task assigned to
+							him/her;
+						</p>
+<br>
+						<p class="paragraph">
+							d) Shall be made answerable for any and all liabilities for
+							damages for property or injury to third person, which may be
+							occasioned by his/her intentional or negligent act while in the
+							course of his/her training.
+						</p>
+					</td>
+				</tr>
+			</table>
+
+			<!-- Privacy Notice -->
+			<table class="privacy-table">
+				<tr>
+					<td class="privacy-cell">
+						Pursuant to Republic Act No. 10173, also known as the Data Privacy
+						Act of 2012, the Batangas State University, the National Engineering
+						University, recognizes its commitment to protect and respect the
+						privacy of its customers and/or stakeholders and ensure that all
+						information collected from them are all processed in accordance with
+						the principles of transparency, legitimate purpose and
+						proportionality mandated under the Data Privacy Act of 2012.
+					</td>
+				</tr>
+			</table>
+
+			<!-- Signature Sections -->
+			<table class="signature-table">
+				<tr>
+					<td class="signature-cell">
+						<div class="sig-line"></div>
+						<div class="sig-label">
+							(Signature over Printed Name of Parent/Guardian)
+						</div>
+						<div class="info-field">
+							<span class="field-label">Contact Number:</span>
+							<span class="field-underline" id="displayContactNumber"></span>
+						</div>
+						<div class="info-field">
+							<span class="field-label">Address:</span>
+							<span class="field-underline" id="displayAddress"></span>
+						</div>
+					</td>
+				</tr>
+			</table>
+
+			<table class="conforme-table">
+				<tr>
+					<td class="conforme-cell">
+						<p class="conforme-text">Conforme:</p>
+
+						<div class="student-sig">
+							<div class="sig-line-short"></div>
+							<div class="sig-label-center">
+								(Signature over Printed Name of Student)
+							</div>
+						</div>
+
+						<div class="coordinator-field">
+							<span class="field-label">Name of OJT Coordinator:</span>
+							<span class="field-underline-long" id="displayCoordinator"></span>
+						</div>
+					</td>
+				</tr>
+			</table>
+
+			<!-- Action Buttons -->
+			<div class="action-buttons">
+				<button class="print-btn" onclick="downloadPDF()">Download PDF</button>
+			</div>
+		</div>
+
+		<script src="index.js"></script>
+	</body>
+</html>
